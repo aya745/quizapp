@@ -32,6 +32,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   // create an index to loop through questions
   int index = 0;
+  // create a score variable
+  int score = 0;
   // create a boolean value to check if the user has clicked
   bool isPressed = false;
   // create a function to display the next question
@@ -71,6 +73,16 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const Text('Quiz App'),
         backgroundColor: backround,
         shadowColor: Colors.transparent,
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(18.0),
+            child: Text(
+              'Score: $score',
+              style: const TextStyle(fontSize: 18.0),
+              ),
+              ),
+
+        ],
         ),
         body: Container(
           width: double.infinity,
