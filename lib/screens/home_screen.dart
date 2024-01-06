@@ -4,6 +4,7 @@ import 'package:quiz_app/models/question_model.dart';
 import 'package:quiz_app/widgets/next_button.dart';
 import 'package:quiz_app/widgets/question_widget.dart';
 import 'package:quiz_app/widgets/option_card.dart';
+import 'package:quiz_app/widgets/result_box.dart';
 
 //create homescreen widget
 
@@ -40,7 +41,14 @@ class _HomeScreenState extends State<HomeScreen> {
   bool isAlreadySelected = false;
   void nextQuestion(){
     if(index == _questions.length -1){
-      return;
+      showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (ctx) => ResultBox(
+          result : score, //total points the user got
+          questionLength: _questions.length, // out of how many questions
+          
+          ));
     } else{
     if(isPressed){
     
