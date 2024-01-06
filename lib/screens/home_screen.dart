@@ -30,10 +30,11 @@ class _HomeScreenState extends State<HomeScreen> {
 
   ];
 
-  //create an index to loop through questions
+  // create an index to loop through questions
   int index = 0;
-
-  //create a function to display the next question
+  // create a boolean value to check if the user has clicked
+  bool isPressed = false;
+  // create a function to display the next question
   void nextQuestion(){
     if(index == _questions.length -1){
       return;
@@ -42,6 +43,13 @@ class _HomeScreenState extends State<HomeScreen> {
       index++; //when the index will change to 1, rebuild the app.
     });
     }
+  }
+  
+  // create a function for changing color
+  void changeColor(){
+    setState(() {
+      isPressed = true;
+    });
   }
   @override
   Widget build(BuildContext context) {
@@ -67,9 +75,17 @@ class _HomeScreenState extends State<HomeScreen> {
                 // add some space
                 const SizedBox(height: 25.0),
                 for(int i=0; i< _questions[index].options.length;i++)
-                  OptionCard(option: _questions[index].options.keys.toList()[i]),
-                  
+                  OptionCard(
+                    option: _questions[index].options.keys.toList()[i],
+                    color: isPressed
+                      ? _questions[index].options.values.toList()[i] == true
+                        ? correct 
+                        : incorrect
+                      : neutral,
+                      onTap: changeColor,
+                    ),
 
+            
             ],
           ),
          ),
