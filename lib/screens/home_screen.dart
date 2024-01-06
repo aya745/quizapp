@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/constants.dart';
 import 'package:quiz_app/models/question_model.dart';
+import 'package:quiz_app/widgets/next_button.dart';
 import 'package:quiz_app/widgets/question_widget.dart';
+
+
 //create homescreen widget
 
 class HomeScreen extends StatefulWidget {
@@ -56,7 +59,8 @@ class _HomeScreenState extends State<HomeScreen> {
          ),
 
 
-         floatingActionButton:  ,
+         floatingActionButton: NextButton(),
+         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
