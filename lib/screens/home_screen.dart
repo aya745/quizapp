@@ -33,6 +33,16 @@ class _HomeScreenState extends State<HomeScreen> {
   //create an index to loop through questions
   int index = 0;
 
+  //create a function to display the next question
+  void nextQuestion(){
+    if(index == _questions.length -1){
+      return;
+    } else{
+    setState(() {
+      index++; //when the index will change to 1, rebuild the app.
+    });
+    }
+  }
   @override
   Widget build(BuildContext context) {
   return Scaffold(
@@ -59,7 +69,12 @@ class _HomeScreenState extends State<HomeScreen> {
          ),
 
 
-         floatingActionButton: NextButton(),
+         floatingActionButton: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+          child: NextButton(
+            nextQuestion: nextQuestion,
+            ),
+         ),
          floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
