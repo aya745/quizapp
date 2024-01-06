@@ -39,10 +39,21 @@ class _HomeScreenState extends State<HomeScreen> {
     if(index == _questions.length -1){
       return;
     } else{
+    if(isPressed){
+    
     setState(() {
       index++; //when the index will change to 1, rebuild the app.
       isPressed = false;
     });
+    } else{
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content: Text('Please select an option'),
+          behavior: SnackBarBehavior.floating,
+          margin: EdgeInsets.symmetric(vertical: 20.0),
+          )
+      );
+    }
+    
     }
   }
   
