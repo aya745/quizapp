@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/constants.dart';
 
 class QuestionWidget extends StatelessWidget {
   const QuestionWidget({Key? key,
@@ -14,7 +15,13 @@ class QuestionWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.centerLeft,
-      child: Text('Question ${indexAction + 1}/$totalQuestions: $question'),
+      child: Text(
+        'Question ${indexAction + 1}/$totalQuestions: $question',
+        style: const TextStyle(
+          fontSize: 24.0,
+          color: neutral,
+          ) ,
+        ),
     );
   }
 }

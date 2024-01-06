@@ -41,6 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         body: Container(
           width: double.infinity,
+          padding: const EdgeInsets.symmetric(horizontal: 10.0),
           child: Column(
             children: [
               //adding questionWidget here
@@ -48,8 +49,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 indexAction: index, //currently at 0
                 question: _questions[index].title, //first in the list
                 totalQuestions: _questions.length, //total length of the list
-                )
-
+                ),
+                const Divider(color: neutral),
             ],
           ),
          ),
