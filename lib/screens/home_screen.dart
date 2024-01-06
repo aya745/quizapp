@@ -41,6 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
     } else{
     setState(() {
       index++; //when the index will change to 1, rebuild the app.
+      isPressed = false;
     });
     }
   }
