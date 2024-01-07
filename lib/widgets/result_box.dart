@@ -6,10 +6,11 @@ class ResultBox extends StatelessWidget {
     Key? key,
     required this.result,
     required this.questionLength,
+    required this.onPressed,
   }) : super(key: key);
   final int result;
   final int questionLength;
-
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -47,6 +48,18 @@ class ResultBox extends StatelessWidget {
                       : 'Good Job!', // when the result is more than half 
                       style: const TextStyle(color: neutral),
                   ),
+                  const SizedBox(height: 25.0),
+                  GestureDetector(
+                    onTap: onPressed,
+                    child: const Text(
+                      'Start Over', 
+                      style: TextStyle(
+                        color: Colors.blue,
+                        fontSize: 20.0,
+                        letterSpacing: 1.0,
+                        ),
+                        ),
+                    )
           ],
           )
           ),
