@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-# quiz_app
+# A quiz app
 
-A new Flutter project.
+
 
 ## Getting Started
 
