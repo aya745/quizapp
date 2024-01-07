@@ -76,12 +76,12 @@ class _HomeScreenState extends State<HomeScreen> {
     } else {
        if (value == true) {
       score++;
-      setState(() {
+   }
+    setState(() {
         isPressed = true;
         isAlreadySelected=true;
 
     });
-    }
     }
    
     
@@ -95,6 +95,7 @@ class _HomeScreenState extends State<HomeScreen> {
       isPressed = false;
       isAlreadySelected = false;
     });
+    Navigator.pop(context);
   }
   
   @override
